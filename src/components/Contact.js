@@ -179,7 +179,7 @@ export default function Contact() {
               >
                 <h4 className="text-xl font-semibold text-green-400 mb-2">Message Sent!</h4>
                 <p className="text-green-400">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
+                  Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                 </p>
                 <button 
                   onClick={() => setSubmitted(false)}
