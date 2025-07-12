@@ -5,7 +5,6 @@ A modern, responsive portfolio website built with Next.js, showcasing my skills,
 ![Portfolio Preview](https://img.shields.io/badge/Next.js-15.3.5-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-black?style=for-the-badge&logo=tailwind-css)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 
 ## ✨ Features
 
