@@ -34,13 +34,13 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-6 text-white">My Story</h3>
             <div className="space-y-4 text-[#cccccc]">
               <p data-aos="fade-up" data-aos-delay="300">
-              It all started with a simple question — "How does this website work?" That curiosity sparked a journey into the world of development, where I found my passion for building things that matter.
+              It all started with a simple question — &ldquo;How does this website work?&rdquo; That curiosity sparked a journey into the world of development, where I found my passion for building things that matter.
               </p>
               <p data-aos="fade-up" data-aos-delay="400">
-              From front-end finesse to backend logic, I've spent years mastering the tools that bring great ideas to life on the web. I believe in thoughtful design, clean code, and technology that makes life easier.
+              From front-end finesse to backend logic, I&apos;ve spent years mastering the tools that bring great ideas to life on the web. I believe in thoughtful design, clean code, and technology that makes life easier.
               </p>
               <p data-aos="fade-up" data-aos-delay="500">
-              I'm continuously growing, exploring new tech stacks, and building apps that are not just functional — but enjoyable to use.
+              I&apos;m continuously growing, exploring new tech stacks, and building apps that are not just functional — but enjoyable to use.
               </p>
             </div>
             <motion.div

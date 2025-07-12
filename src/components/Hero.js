@@ -45,7 +45,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              Turning coffee into code and ideas into interactive experiences. I specialize in building immersive web applications that don't just work — they wow.
+              Turning coffee into code and ideas into interactive experiences. I specialize in building immersive web applications that don&apos;t just work — they wow.
             </motion.p>
             
             {/* CTA Buttons */}
@@ -157,7 +157,7 @@ function SequentialTypewriter() {
     }, isDeleting ? 50 : 100); // Faster when deleting
     
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentTitleIndex, loopNum]);
+  }, [displayText, isDeleting, currentTitleIndex, loopNum, titles]);
 
   return (
     <motion.div className="inline-block">
