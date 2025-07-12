@@ -1,32 +1,28 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
+import ClientWrapper from "@/components/ClientWrapper";
 
-const SocialSidebar = dynamic(() => import('@/components/SocialSidebar'), { ssr: true });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio | Developer & Designer",
-  description: "My personal portfolio showcasing projects and skills",
+  title: "Anurag Kumar | Software Engineer",
+  description: "Portfolio website of Anurag Kumar, a software engineer specializing in web development.",
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
-      >
-        <SocialSidebar />
-        {children}
+      <body className={`${inter.className} bg-[#121212]`}>
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

@@ -25,7 +25,7 @@ export default function Projects() {
       imageAlt: 'E-commerce store dashboard showing products grid and shopping cart',
       github: 'https://github.com/Anu4raggdev',
       live: 'https://demo-ecommerce.example.com',
-      color: 'from-blue-600/30 to-indigo-900/30'
+      color: 'from-orange-600/30 to-orange-900/30'
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export default function Projects() {
       imageAlt: 'Task management application showing kanban board with tasks',
       github: 'https://github.com/Anu4raggdev',
       live: 'https://task-manager-demo.example.com',
-      color: 'from-purple-600/30 to-pink-900/30'
+      color: 'from-orange-500/30 to-orange-800/30'
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export default function Projects() {
       imageAlt: 'Financial dashboard showing expense charts and budget tracking',
       github: 'https://github.com/Anu4raggdev',
       live: 'https://finance-tracker-demo.example.com',
-      color: 'from-emerald-600/30 to-teal-900/30'
+      color: 'from-orange-400/30 to-orange-700/30'
     },
     {
       id: 4,
@@ -78,7 +78,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section id="projects" className="py-20 bg-[#121212]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,10 +86,11 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
+          data-aos="fade-up"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">My Projects</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
+          <p className="mt-6 text-lg text-[#cccccc] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Here are some of my recent projects. Each one demonstrates my technical skills and problem-solving abilities.
           </p>
         </motion.div>
@@ -101,13 +102,15 @@ export default function Projects() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={item}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700"
+              className="bg-gradient-to-br from-[#1a1a1a] to-[#1e1e1e] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-700"
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
             >
-              <div className="h-56 bg-gray-800 relative overflow-hidden">
+              <div className="h-56 bg-[#1d1d1d] relative overflow-hidden">
                 {/* Display image if available, otherwise show stylized placeholder */}
                 {!failedImages[project.id] ? (
                   <div className="relative h-full w-full">
@@ -156,13 +159,13 @@ export default function Projects() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <p className="text-[#cccccc] mb-4">{project.description}</p>
                 <div className="mb-6">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs"
+                        className="px-3 py-1 bg-orange-900/50 text-orange-300 rounded-full text-xs"
                       >
                         {tech}
                       </span>
@@ -172,7 +175,7 @@ export default function Projects() {
                 <div className="flex space-x-3">
                   <a
                     href={project.github}
-                    className="px-4 py-2 bg-gray-700 text-white rounded-md text-sm hover:bg-gray-600 transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-[#242424] text-white rounded-md text-sm hover:bg-[#2a2a2a] transition-colors flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -183,7 +186,7 @@ export default function Projects() {
                   </a>
                   <a
                     href={project.live}
-                    className="px-4 py-2 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-orange-500 text-white rounded-md text-sm hover:bg-orange-600 transition-colors flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -205,10 +208,12 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-12"
+          data-aos="fade-up"
+          data-aos-delay="800"
         >
           <a
             href="https://github.com/Anu4raggdev"
-            className="inline-flex items-center px-6 py-3 border border-gray-600 rounded-md shadow-sm text-base font-medium text-gray-200 bg-gray-800 hover:bg-gray-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 border border-gray-600 rounded-md shadow-sm text-base font-medium text-[#cccccc] bg-[#1a1a1a] hover:bg-[#242424] transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >

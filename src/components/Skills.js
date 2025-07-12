@@ -54,7 +54,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section id="skills" className="py-20 bg-[#121212]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,10 +62,11 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
+          data-aos="fade-up"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">My Skills</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
+          <p className="mt-6 text-lg text-[#cccccc] max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             I&apos;ve developed expertise in various technologies through project work and continuous learning.
           </p>
         </motion.div>
@@ -77,6 +78,7 @@ export default function Skills() {
               title={category.title}
               skills={category.skills}
               delay={index * 0.1}
+              index={index}
             />
           ))}
         </div>
@@ -85,32 +87,38 @@ export default function Skills() {
   );
 }
 
-function SkillCategory({ title, skills, delay }) {
+function SkillCategory({ title, skills, delay, index }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg border border-gray-700"
+      className="bg-gradient-to-br from-[#1a1a1a] to-[#1e1e1e] rounded-lg p-6 shadow-lg border border-gray-700"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
     >
-      <h3 className="text-xl font-bold mb-6 text-white border-b border-gray-700 pb-2">{title}</h3>
+      <h3 className="text-xl font-bold mb-6 text-white border-b border-gray-700 pb-2" data-aos="fade-right" data-aos-delay={index * 100 + 100}>
+        <span className="text-orange-500">{title}</span>
+      </h3>
       <div className="grid grid-cols-3 gap-6">
-        {skills.map((skill) => (
-          <SkillIcon key={skill.name} name={skill.name} icon={skill.icon} />
+        {skills.map((skill, skillIndex) => (
+          <SkillIcon key={skill.name} name={skill.name} icon={skill.icon} delay={skillIndex * 50} />
         ))}
       </div>
     </motion.div>
   );
 }
 
-function SkillIcon({ name, icon }) {
+function SkillIcon({ name, icon, delay }) {
   return (
     <motion.div
       className="flex flex-col items-center justify-center"
       whileHover={{ y: -5, transition: { duration: 0.3 } }}
+      data-aos="zoom-in"
+      data-aos-delay={delay}
     >
-      <div className="w-16 h-16 flex items-center justify-center rounded-lg mb-2 bg-gradient-to-br from-gray-700 to-gray-800 p-3">
+      <div className="w-16 h-16 flex items-center justify-center rounded-lg mb-2 bg-gradient-to-br from-[#1d1d1d] to-[#242424] p-3 hover:border hover:border-orange-500 transition-all duration-300">
         <Image 
           src={`/icons/${icon}.svg`}
           alt={`${name} icon`}
@@ -119,7 +127,7 @@ function SkillIcon({ name, icon }) {
           className="object-contain"
         />
       </div>
-      <span className="text-sm text-center text-gray-300">{name}</span>
+      <span className="text-sm text-center text-[#cccccc]">{name}</span>
     </motion.div>
   );
 }

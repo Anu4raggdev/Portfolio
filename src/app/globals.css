@@ -2,21 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
 
 :root {
-  --background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a, #0a0a0a);
+  --background: #121212;
   --foreground: #ededed;
+  --accent: #f97316; /* Orange-500 */
+  --accent-light: #fb923c; /* Orange-400 */
+  --accent-dark: #ea580c; /* Orange-600 */
+  --text-secondary: #cccccc; /* Secondary text color */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-text-secondary: var(--text-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(to bottom right, #050505, #121212, #050505);
+    --background: #121212;
     --foreground: #ededed;
+    --text-secondary: #cccccc;
   }
 }
 
@@ -43,11 +50,19 @@ body {
 }
 
 .glow-text {
-  text-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 5px rgba(249, 115, 22, 0.5), 0 0 20px rgba(249, 115, 22, 0.3);
 }
 
+.orange-gradient-text {
+  background: linear-gradient(to right, #fb923c, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Maintain purple gradient text for backward compatibility */
 .purple-gradient-text {
-  background: linear-gradient(to right, #c084fc, #8b5cf6);
+  background: linear-gradient(to right, #fb923c, #f97316);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -116,7 +131,7 @@ html {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #c084fc, #8b5cf6, #6366f1);
+  background: linear-gradient(45deg, #fb923c, #f97316, #ea580c);
   z-index: -1;
   border-radius: 0.6rem;
   animation: border-animate 3s ease alternate infinite;
